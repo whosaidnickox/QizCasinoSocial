@@ -268,12 +268,16 @@ extension WKWebViewRepresentable {
         
         func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
             parent.rerirects += 1
+           
             if !parent.zaglushka {
                 decisionHandler(.allow)
             } else {
                 if parent.rerirects <= 4 {
+                    print(navigationAction.request.url)
                     decisionHandler(.allow)
+                   
                 } else {
+                    print(navigationAction.request.url)
                     decisionHandler(.cancel)
                 }
             }

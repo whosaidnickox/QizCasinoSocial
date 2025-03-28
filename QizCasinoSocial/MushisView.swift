@@ -14,14 +14,29 @@ struct MushisView: View {
                .resizable()
                .ignoresSafeArea()
             
-            HStack {
-                NavigationLink {
-                    RulesView()
-                } label: {
-                    Image("prvaks")
-                        .resizable()
-                        .scaledToFit()
+            
+            VStack {
+                HStack {
+                    NavigationLink {
+                        RulesView()
+                    } label: {
+                        Image("prvaks")
+                          
+                    }
+                    Spacer()
+                    NavigationLink {
+                        Settings()
+                    } label: {
+                        Image("setari")
+                          
+                    }
+                    
                 }
+                .padding()
+                Spacer()
+            }
+            HStack {
+               
 
                
                 
@@ -29,26 +44,36 @@ struct MushisView: View {
                     Image("olgiwbf")
                         .resizable()
                         .scaledToFit()
+                        .padding(.top)
                     
                     
-                    NavigationLink {
-                        Igrushia()
-                    } label: {
-                        Image("strButton")
+                    Spacer()
+                    
+                    
+                    HStack {
+                        NavigationLink {
+                            Pisbg()
+                        } label: {
+                            Image("psbk")
+                        }
+                        
+                        Spacer()
+                        
+                        NavigationLink {
+                            Igrushia()
+                        } label: {
+                            Image("whelz")
+                        }
+                        
                     }
                 }
                 
-                NavigationLink {
-                    Settings()
-                } label: {
-                    Image("setari")
-                        .resizable()
-                        .scaledToFit()
-                }
+            
 
               
             }
         }
         .navigationBarBackButtonHidden()
+        .ignoresSafeArea()
     }
 }
